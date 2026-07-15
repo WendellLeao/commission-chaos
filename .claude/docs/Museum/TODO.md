@@ -42,7 +42,43 @@ multiplayer (carregar/entregar artefato) + 1–2 sistemas de caos, não o jogo c
 - [ ] Verificar: dois clientes conseguem pegar artefatos diferentes simultaneamente sem conflito;
       um jogador não pode roubar o artefato que outro já está segurando (validação no servidor).
 
-## Fase 2 — Caos #1: Estátua que persegue (menor escopo, maior impacto visual)
+## Fase 2 — Modo Caótico: itens que nascem caóticos (o diferencial do jogo)
+
+Ideia central: pickups comuns têm uma chance aleatória (não tão rara) de nascer "caóticos" — ganham um
+comportamento especial que cria interação/desafio extra com o jogador. Cada comportamento é um
+componente plugável independente, seguindo o princípio de "construir sistemas, não conteúdo" (ver Notas).
+
+- [ ] Flag/roll de spawn caótico no `PickupSpawner` existente: ao spawnar um pickup, sorteia se ele
+      nasce caótico e, se sim, qual comportamento caótico recebe (roll ponderado, não uniforme).
+- [ ] Definir enum/lista de comportamentos caóticos disponíveis e um componente por comportamento
+      (`NetworkBehaviour` próprio, anexado/habilitado só quando o item nasce caótico daquele tipo).
+
+### Comportamento 1 — Item fujão (foge saltitando)
+- [ ] Detecta aproximação do jogador (raio/distância) e foge saltitando na direção oposta; velocidade
+      baixa o suficiente para ser pego, mas com movimento evasivo (zigue-zague) que dá trabalho.
+- [ ] Se o jogador pega o item e demora demais para entregá-lo (timer), o item se solta sozinho da mão
+      do jogador (auto-drop decidido pelo servidor) e volta a fugir saltitando.
+- [ ] Verificar: fuga e auto-drop são decididos no servidor; cliente só reproduz animação/posição via
+      `NetworkTransform`; sem exploit de "segurar pra sempre" no item fujão.
+
+### Comportamento 2 — Item alto e frágil (balança e pode quebrar)
+- [ ] Enquanto o jogador carrega o item, curvas agressivas do jogador (variação brusca de direção/
+      velocidade angular) fazem o item balançar para o lado oposto à curva.
+- [ ] Se a curva for agressiva demais (acima de um limiar), o item tomba, cai no chão e quebra
+      permanentemente (estado "quebrado" — não pode mais ser entregue).
+- [ ] Verificar: cálculo de agressividade da curva roda no servidor (autoridade sobre quebrar ou não);
+      o balanço visual pode ser só cosmético no cliente, sem gameplay dependente dele.
+
+### Comportamento 3 — Item armadilha (agarra o jogador)
+- [ ] Ao dar pickup nesse item, chance de ele "capturar" o jogador: segura o jogador e o arremessa para
+      longe (impulso/knockback), em vez de ser coletado normalmente.
+- [ ] Verificar: resultado (captura vs. pickup normal) decidido no servidor no momento da interação;
+      knockback sincronizado sem teleporte brusco perceptível para outros clientes.
+
+- [ ] Verificar (geral): itens caóticos continuam contando para o objetivo de pontuação como pickups
+      normais quando entregues com sucesso (exceto o item frágil quebrado, que é perdido).
+
+## Fase 3 — Caos #1: Estátua que persegue (menor escopo, maior impacto visual)
 
 - [ ] `HauntedStatue`: estátua com `NavMeshAgent` (ou movimento simples) que fica parada quando
       observada por um jogador (`OnStartClient`/tick no servidor calcula ângulo de visão de cada
@@ -53,13 +89,13 @@ multiplayer (carregar/entregar artefato) + 1–2 sistemas de caos, não o jogo c
 - [ ] Verificar: comportamento é determinado no servidor (autoridade), clientes apenas veem o
       resultado via `NetworkTransform`; não há flicker/pop de posição perceptível.
 
-## Fase 3 — Caos #2: Modificador de sala rotativa (opcional, se sobrar tempo)
+## Fase 4 — Caos #2: Modificador de sala rotativa (opcional, se sobrar tempo)
 
 - [ ] Uma sala com plataforma/rotação periódica (`SyncVar` de ângulo ou `NetworkTransform` do
       objeto raiz da sala) que reorganiza o caminho até a saída.
 - [ ] Verificar: rotação é suave e sincronizada entre clientes (sem desync perceptível).
 
-## Fase 4 — Loop de partida mínimo
+## Fase 5 — Loop de partida mínimo
 
 - [ ] Timer de partida (`SyncVar<float>` decrescente, atualizado só no servidor).
 - [ ] Condição de vitória/derrota simples: todos os artefatos entregues antes do timer zerar.
