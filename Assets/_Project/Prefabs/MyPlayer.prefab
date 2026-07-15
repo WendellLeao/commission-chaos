@@ -86,7 +86,12 @@ MonoBehaviour:
   <PredictedSpawn>k__BackingField: {fileID: 0}
   <PredictedOwner>k__BackingField: {fileID: 0}
   NetworkBehaviours:
-  - {fileID: 0}
+  - {fileID: 938809502355089911}
+  - {fileID: 4388404008855283199}
+  - {fileID: 7320433252957306433}
+  - {fileID: 7959727946611886940}
+  - {fileID: 6161853342963879094}
+  - {fileID: 4603550073636542028}
   InitializedParentNetworkBehaviour: {fileID: 0}
   InitializedNestedNetworkObjects: []
   RuntimeParentNetworkBehaviour: {fileID: 0}
@@ -97,7 +102,7 @@ MonoBehaviour:
   _initializeOrder: 0
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
-  _initializedTimestamp: -8584181448615703061
+  _initializedTimestamp: -8584174956373952707
   _localLevelOfDetailCalculationType: 0
   _useLevelOfDetail: 0
   _useRootLevelOfDetail: 1
@@ -116,7 +121,7 @@ MonoBehaviour:
   _spectatorInterpolation: 2
   _enableTeleport: 0
   _teleportThreshold: 1
-  <PrefabId>k__BackingField: 9
+  <PrefabId>k__BackingField: 8
   <SpawnableCollectionId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 9895087958597524300
   SceneId: 0
@@ -137,9 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
   _componentConfiguration: 0
   _synchronizeParent: 0
   _packing:
@@ -183,9 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b14c270b999497d8a27110b1d965e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.MyPlayerIdProvider
-  _componentIndexCache: 255
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
   playerIdDebug: 
 --- !u!114 &7320433252957306433
 MonoBehaviour:
@@ -199,13 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832a5475ca571b640bf88ea5600fd9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyPlayerController
-  _componentIndexCache: 255
+  _componentIndexCache: 2
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
   moveSpeed: 5
   sprintMultiplier: 2
   rotationSpeed: 720
   gravity: -9.81
+  jumpHeight: 3
 --- !u!114 &7959727946611886940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,11 +224,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3377711437f4e37b750f8e028176cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.MyPlayerColorChanger
-  _componentIndexCache: 255
+  _componentIndexCache: 3
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
   rend: {fileID: 6153571517217636955}
-  nextColor: {r: 1, g: 0, b: 0, a: 1}
+  colorPalette:
+  - {r: 0.9, g: 0.15, b: 0.15, a: 1}
+  - {r: 0.15, g: 0.45, b: 0.9, a: 1}
+  - {r: 0.15, g: 0.8, b: 0.25, a: 1}
+  - {r: 0.95, g: 0.8, b: 0.1, a: 1}
+  - {r: 0.75, g: 0.2, b: 0.85, a: 1}
+  - {r: 0.1, g: 0.85, b: 0.85, a: 1}
 --- !u!114 &6161853342963879094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,9 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69365ce1beff3a64ca3d9732997cd6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.PlayerPickup
-  _componentIndexCache: 255
+  _componentIndexCache: 4
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
   handSocket: {fileID: 120192257315303751}
   pickupRadius: 1.5
   pickupLayer:
@@ -255,9 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8995f1c1d2ad984cb6f84545f640e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.PlayerCameraFollow
-  _componentIndexCache: 255
+  _componentIndexCache: 5
   _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2600567899207574070}
 --- !u!1 &3055991478721007612
 GameObject:
   m_ObjectHideFlags: 0
