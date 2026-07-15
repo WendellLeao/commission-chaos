@@ -1,47 +1,36 @@
 ﻿using FishNet.Object;
+using FishNet.Object.Synchronizing;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace _Project
 {
     internal sealed class MyPlayerColorChanger : NetworkBehaviour
     {
         [SerializeField] private Renderer rend;
-        [SerializeField] private Color nextColor;
-        
-        public override void OnStartClient()
-        {
-            base.OnStartClient();
+        [SerializeField] private Color[] colorPalette;
 
-            enabled = IsOwner;
+        private readonly SyncVar<Color> _color = new();
+
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+
+            _color.Value = colorPalette[Owner.ClientId % colorPalette.Length];
         }
 
-        private void Update()
+        private void Awake()
         {
-            if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
-            {
-                MyPlayerIdProvider playerId = GetComponent<MyPlayerIdProvider>();
-                ChangeColorServer(playerId, nextColor);
-            }
+            _color.OnChange += OnColorChange;
         }
 
-        [ServerRpc]
-        private void ChangeColorServer(MyPlayerIdProvider playerId, Color color)
+        private void OnDestroy()
         {
-            ChangeColorObserver(playerId, color);
+            _color.OnChange -= OnColorChange;
         }
 
-        [ObserversRpc]
-        private void ChangeColorObserver(MyPlayerIdProvider playerId, Color color)
+        private void OnColorChange(Color prev, Color next, bool asServer)
         {
-            MyPlayerIdProvider id = GetComponent<MyPlayerIdProvider>();
-
-            if (id != playerId)
-            {
-                return;
-            }
-
-            rend.material.color = color;
+            rend.material.color = next;
         }
     }
 }
