@@ -20,6 +20,16 @@ namespace _Project
             enabled = IsOwner;
         }
 
+        public void ClearHeldItemServer()
+        {
+            if (!IsServerInitialized)
+            {
+                return;
+            }
+
+            TargetSetHeldItem(Owner, null);
+        }
+
         private void Update()
         {
             if (!ReadInteractPressed())
