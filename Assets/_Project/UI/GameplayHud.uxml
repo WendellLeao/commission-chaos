@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Style src="project://database/Assets/_Project/UI/GameplayHud.uss" />
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="score-bar" class="score-bar">
+            <ui:Label text="Pontos: 0" name="score-label" class="score-label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="win-panel" class="win-panel">
+            <ui:VisualElement name="win-panel-box" class="win-panel-box">
+                <ui:Label text="Parab&#233;ns, voc&#234; venceu!" name="win-label" class="win-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
