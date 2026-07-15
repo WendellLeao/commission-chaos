@@ -25,6 +25,17 @@
     border-radius: 8px;
 }
 
+.timer-label {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(240, 240, 240);
+    -unity-text-align: middle-center;
+    background-color: rgba(20, 20, 24, 0.6);
+    padding: 4px 20px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
 .win-panel {
     display: none;
     position: absolute;
@@ -49,5 +60,32 @@
     font-size: 48px;
     -unity-font-style: bold;
     color: rgb(255, 215, 0);
+    -unity-text-align: middle-center;
+}
+
+.lose-panel {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lose-panel-box {
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(45, 45, 52);
+    padding: 40px 64px;
+    border-radius: 12px;
+}
+
+.lose-label {
+    font-size: 48px;
+    -unity-font-style: bold;
+    color: rgb(220, 60, 60);
     -unity-text-align: middle-center;
 }

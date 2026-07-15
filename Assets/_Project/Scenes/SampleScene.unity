@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 16164591}
   - component: {fileID: 16164590}
   - component: {fileID: 16164589}
+  - component: {fileID: 16164592}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -224,6 +225,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16164592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16164588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7388ad712f686d141ad18c7bb76417b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.GameTimer
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 16164590}
+  _networkObjectCache: {fileID: 0}
 --- !u!1 &17477855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1233,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 13, z: -7}
+  FollowOffset: {x: 0, y: 17, z: -9}
 --- !u!114 &1834920338
 MonoBehaviour:
   m_ObjectHideFlags: 0
