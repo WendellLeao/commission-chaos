@@ -3,17 +3,17 @@
     <ui:Style src="project://database/Assets/_Project/UI/GameplayHud.uss" />
     <ui:VisualElement name="root" class="root">
         <ui:VisualElement name="score-bar" class="score-bar">
-            <ui:Label text="Pontos: 0" name="score-label" class="score-label" />
-            <ui:Label text="Tempo: 30" name="timer-label" class="timer-label" />
+            <ui:Label text="Score: 0" name="score-label" class="score-label" />
+            <ui:Label text="Time: 30" name="timer-label" class="timer-label" />
         </ui:VisualElement>
         <ui:VisualElement name="win-panel" class="win-panel">
             <ui:VisualElement name="win-panel-box" class="win-panel-box">
-                <ui:Label text="Parab&#233;ns, voc&#234; venceu!" name="win-label" class="win-label" />
+                <ui:Label text="Congratulations, you won!" name="win-label" class="win-label" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="lose-panel" class="lose-panel">
             <ui:VisualElement name="lose-panel-box" class="lose-panel-box">
-                <ui:Label text="O tempo acabou, voc&#234; perdeu!" name="lose-label" class="lose-label" />
+                <ui:Label text="Time's up, you lost!" name="lose-label" class="lose-label" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
