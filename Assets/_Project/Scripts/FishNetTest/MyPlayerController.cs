@@ -8,6 +8,7 @@ public class MyPlayerController : NetworkBehaviour
     [SerializeField] private float sprintMultiplier = 2f;
     [SerializeField] private float rotationSpeed = 720f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float jumpHeight = 1.5f;
 
     private CharacterController _controller;
     private Vector3 _velocity;
@@ -46,6 +47,11 @@ public class MyPlayerController : NetworkBehaviour
         if (_controller.isGrounded && _velocity.y < 0f)
         {
             _velocity.y = -2f;
+        }
+
+        if (_controller.isGrounded && ReadJumpInput())
+        {
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         _velocity.y += gravity * Time.deltaTime;
@@ -87,6 +93,25 @@ public class MyPlayerController : NetworkBehaviour
         Gamepad gamepad = Gamepad.current;
 
         if (gamepad != null && gamepad.leftStickButton.isPressed)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool ReadJumpInput()
+    {
+        Keyboard keyboard = Keyboard.current;
+
+        if (keyboard != null && keyboard.spaceKey.wasPressedThisFrame)
+        {
+            return true;
+        }
+
+        Gamepad gamepad = Gamepad.current;
+
+        if (gamepad != null && gamepad.buttonSouth.wasPressedThisFrame)
         {
             return true;
         }
