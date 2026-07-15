@@ -107,12 +107,12 @@ namespace _Project
 
         private string BuildScoreText(int score)
         {
-            return $"Pontos: {score}";
+            return $"Score: {score}";
         }
 
         private string BuildTimerText(float remainingTime)
         {
-            return $"Tempo: {Mathf.CeilToInt(remainingTime)}";
+            return $"Time: {Mathf.CeilToInt(remainingTime)}";
         }
     }
 }
