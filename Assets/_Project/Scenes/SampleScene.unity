@@ -350,7 +350,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 50
+  field of view: 38
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 6.5, z: -5.5}
+  FollowOffset: {x: 0, y: 13, z: -7}
 --- !u!114 &1834920338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,7 +1242,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 50
+    FieldOfView: 38
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
