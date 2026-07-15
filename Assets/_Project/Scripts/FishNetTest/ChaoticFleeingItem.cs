@@ -12,9 +12,11 @@ namespace _Project
         [SerializeField] private float hopInterval = 0.45f;
         [SerializeField] private float zigzagAngle = 40f;
         [SerializeField] private float autoDropDelay = 6f;
+        [SerializeField] private float extraGravityMultiplier = 2.5f;
 
         private float _hopCooldown;
         private float _heldTimer;
+        private bool _isGrounded;
 
         private void Update()
         {
@@ -31,6 +33,30 @@ namespace _Project
 
             _heldTimer = 0f;
             TickFleeing();
+        }
+
+        private void FixedUpdate()
+        {
+            _isGrounded = false;
+
+            if (!IsServerInitialized || pickupItem.IsHeld)
+            {
+                return;
+            }
+
+            rb.AddForce(Physics.gravity * extraGravityMultiplier, ForceMode.Acceleration);
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (contact.normal.y > 0.5f)
+                {
+                    _isGrounded = true;
+                    return;
+                }
+            }
         }
 
         private void TickHeldTimer()
@@ -59,7 +85,7 @@ namespace _Project
 
             _hopCooldown -= Time.deltaTime;
 
-            if (_hopCooldown > 0f)
+            if (_hopCooldown > 0f || !_isGrounded)
             {
                 return;
             }

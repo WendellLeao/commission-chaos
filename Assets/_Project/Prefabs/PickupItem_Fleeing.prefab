@@ -162,7 +162,10 @@ MonoBehaviour:
   <ComponentIndex>k__BackingField: 0
   <PredictedSpawn>k__BackingField: {fileID: 0}
   <PredictedOwner>k__BackingField: {fileID: 0}
-  NetworkBehaviours: []
+  NetworkBehaviours:
+  - {fileID: 6012174824238053125}
+  - {fileID: 4488355543935629724}
+  - {fileID: 2168105832778281627}
   InitializedParentNetworkBehaviour: {fileID: 0}
   InitializedNestedNetworkObjects: []
   RuntimeParentNetworkBehaviour: {fileID: 0}
@@ -173,7 +176,7 @@ MonoBehaviour:
   _initializeOrder: 0
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
-  _initializedTimestamp: 0
+  _initializedTimestamp: -8584174930969702845
   _localLevelOfDetailCalculationType: 0
   _useLevelOfDetail: 0
   _useRootLevelOfDetail: 1
@@ -192,15 +195,15 @@ MonoBehaviour:
   _spectatorInterpolation: 2
   _enableTeleport: 0
   _teleportThreshold: 1
-  <PrefabId>k__BackingField: 65535
+  <PrefabId>k__BackingField: 14
   <SpawnableCollectionId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 18350980575793304834
   SceneId: 0
   SerializedTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Scale: {x: 0, y: 0, z: 0}
-    IsValid: 0
+    Position: {x: 2, y: 0.5, z: 2}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Scale: {x: 1, y: 1, z: 1}
+    IsValid: 1
 --- !u!114 &6012174824238053125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,9 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1906793788998079376}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 1906793788998079376}
   _componentConfiguration: 0
   _synchronizeParent: 1
   _packing:
@@ -259,9 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f1554183bfa8545a369bf443eaf959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.PickupItem
-  _componentIndexCache: 255
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1906793788998079376}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 1906793788998079376}
   rb: {fileID: 5040789543466637265}
   col: {fileID: 4088892958015939955}
 --- !u!114 &2168105832778281627
@@ -276,13 +279,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ede35dd72b6e446a7a4edbaedb3d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ChaoticFleeingItem
-  _componentIndexCache: 255
+  _componentIndexCache: 2
   _addedNetworkObject: {fileID: 1906793788998079376}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 1906793788998079376}
   pickupItem: {fileID: 4488355543935629724}
   rb: {fileID: 5040789543466637265}
   detectionRadius: 4
   hopForce: 3
-  hopInterval: 0.45
+  hopInterval: 0.3
   zigzagAngle: 40
   autoDropDelay: 6

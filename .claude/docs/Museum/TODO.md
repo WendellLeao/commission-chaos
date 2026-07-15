@@ -48,8 +48,11 @@ Ideia central: pickups comuns têm uma chance aleatória (não tão rara) de nas
 comportamento especial que cria interação/desafio extra com o jogador. Cada comportamento é um
 componente plugável independente, seguindo o princípio de "construir sistemas, não conteúdo" (ver Notas).
 
-- [ ] Flag/roll de spawn caótico no `PickupSpawner` existente: ao spawnar um pickup, sorteia se ele
+- [x] Flag/roll de spawn caótico no `PickupSpawner` existente: ao spawnar um pickup, sorteia se ele
       nasce caótico e, se sim, qual comportamento caótico recebe (roll ponderado, não uniforme).
+      Feito só para o item fujão por enquanto (`chaoticFleeingPrefab` + `chaoticSpawnChance` no
+      `PickupSpawner`, roll uniforme simples); vira roll ponderado entre comportamentos quando existir
+      mais de um.
 - [ ] Definir enum/lista de comportamentos caóticos disponíveis e um componente por comportamento
       (`NetworkBehaviour` próprio, anexado/habilitado só quando o item nasce caótico daquele tipo).
 

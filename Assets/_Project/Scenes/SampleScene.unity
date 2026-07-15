@@ -1233,7 +1233,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 17, z: -9}
+  FollowOffset: {x: 0, y: 17, z: -18.63}
 --- !u!114 &1834920338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,9 +1415,11 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 2039427958}
   _networkObjectCache: {fileID: 0}
   pickupPrefab: {fileID: 1906793788998079376, guid: 84e9c52e081fc86469e6f98fdf761a93, type: 3}
+  chaoticFleeingPrefab: {fileID: 1906793788998079376, guid: 45a84d5699490d941a3d99dc8739161c, type: 3}
   spawnBounds: {fileID: 833072409}
   spawnInterval: 5
   maxConcurrentItems: 5
+  chaoticSpawnChance: 0.25
 --- !u!114 &2039427958
 MonoBehaviour:
   m_ObjectHideFlags: 0

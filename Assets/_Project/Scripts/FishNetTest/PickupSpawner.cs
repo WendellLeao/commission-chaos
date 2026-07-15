@@ -7,9 +7,11 @@ namespace _Project
     internal sealed class PickupSpawner : NetworkBehaviour
     {
         [SerializeField] private NetworkObject pickupPrefab;
+        [SerializeField] private NetworkObject chaoticFleeingPrefab;
         [SerializeField] private BoxCollider spawnBounds;
         [SerializeField] private float spawnInterval = 5f;
         [SerializeField] private int maxConcurrentItems = 5;
+        [SerializeField] [Range(0f, 1f)] private float chaoticSpawnChance = 0.25f;
 
         private readonly List<NetworkObject> _activeItems = new();
 
@@ -36,10 +38,18 @@ namespace _Project
                 return;
             }
 
+            NetworkObject prefab = RollPrefab();
             Vector3 spawnPosition = GetRandomSpawnPosition();
-            NetworkObject instance = Instantiate(pickupPrefab, spawnPosition, Quaternion.identity);
+            NetworkObject instance = Instantiate(prefab, spawnPosition, Quaternion.identity);
             Spawn(instance);
             _activeItems.Add(instance);
+        }
+
+        private NetworkObject RollPrefab()
+        {
+            bool spawnChaotic = Random.value < chaoticSpawnChance;
+
+            return spawnChaotic ? chaoticFleeingPrefab : pickupPrefab;
         }
 
         private Vector3 GetRandomSpawnPosition()
