@@ -208,7 +208,7 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 2600567899207574070}
   _networkObjectCache: {fileID: 2600567899207574070}
   moveSpeed: 5
-  sprintMultiplier: 2
+  sprintMultiplier: 1.5
   rotationSpeed: 720
   gravity: -9.81
   jumpHeight: 3

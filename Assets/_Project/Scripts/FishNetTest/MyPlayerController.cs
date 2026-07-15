@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 public class MyPlayerController : NetworkBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float sprintMultiplier = 2f;
+    [SerializeField] private float sprintMultiplier = 1.5f;
     [SerializeField] private float rotationSpeed = 720f;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float jumpHeight = 1.5f;
+    [SerializeField] private float jumpHeight = 3f;
 
     private CharacterController _controller;
     private Vector3 _velocity;
