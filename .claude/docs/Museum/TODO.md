@@ -54,12 +54,14 @@ componente plugável independente, seguindo o princípio de "construir sistemas,
       (`NetworkBehaviour` próprio, anexado/habilitado só quando o item nasce caótico daquele tipo).
 
 ### Comportamento 1 — Item fujão (foge saltitando)
-- [ ] Detecta aproximação do jogador (raio/distância) e foge saltitando na direção oposta; velocidade
+- [x] Detecta aproximação do jogador (raio/distância) e foge saltitando na direção oposta; velocidade
       baixa o suficiente para ser pego, mas com movimento evasivo (zigue-zague) que dá trabalho.
-- [ ] Se o jogador pega o item e demora demais para entregá-lo (timer), o item se solta sozinho da mão
+- [x] Se o jogador pega o item e demora demais para entregá-lo (timer), o item se solta sozinho da mão
       do jogador (auto-drop decidido pelo servidor) e volta a fugir saltitando.
-- [ ] Verificar: fuga e auto-drop são decididos no servidor; cliente só reproduz animação/posição via
+- [x] Verificar: fuga e auto-drop são decididos no servidor; cliente só reproduz animação/posição via
       `NetworkTransform`; sem exploit de "segurar pra sempre" no item fujão.
+      Implementado em `ChaoticFleeingItem.cs` + prefab `PickupItem_Fleeing.prefab` (variante isolada,
+      sem o roll/spawn caótico automático — ainda não implementado, ver bullets acima).
 
 ### Comportamento 2 — Item alto e frágil (balança e pode quebrar)
 - [ ] Enquanto o jogador carrega o item, curvas agressivas do jogador (variação brusca de direção/

@@ -12,14 +12,16 @@ namespace _Project
         private readonly SyncVar<bool> _isHeld = new();
 
         public bool IsHeld => _isHeld.Value;
+        public PlayerPickup Holder { get; private set; }
 
-        public void PickUp(NetworkBehaviour holder, Vector3 localPosition, Quaternion localRotation)
+        public void PickUp(PlayerPickup holder, Vector3 localPosition, Quaternion localRotation)
         {
             if (!IsServerInitialized || _isHeld.Value)
             {
                 return;
             }
 
+            Holder = holder;
             NetworkObject.SetParent(holder);
             transform.SetLocalPositionAndRotation(localPosition, localRotation);
             _isHeld.Value = true;
@@ -34,6 +36,7 @@ namespace _Project
 
             NetworkObject.UnsetParent();
             _isHeld.Value = false;
+            Holder = null;
         }
 
         private void Awake()
