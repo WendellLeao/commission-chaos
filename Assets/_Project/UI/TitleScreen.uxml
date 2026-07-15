@@ -2,7 +2,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Style src="project://database/Assets/_Project/UI/TitleScreen.uss" />
     <ui:VisualElement name="root" class="root">
-        <ui:Label text="Multiplayer Chaos" name="title-label" class="title-label" />
+        <ui:Label text="Multiplayer Chaos Game" name="title-label" class="title-label" />
         <ui:VisualElement name="button-container" class="button-container">
             <ui:Button text="Play" name="play-button" class="menu-button" />
             <ui:Button text="Quit" name="quit-button" class="menu-button" />
