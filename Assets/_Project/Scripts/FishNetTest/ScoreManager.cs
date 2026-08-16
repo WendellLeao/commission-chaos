@@ -1,4 +1,5 @@
 using System;
+using _Project.Scripts.Networking;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
 
@@ -31,6 +32,11 @@ namespace _Project
         {
             Instance = this;
             _totalScore.OnChange += OnTotalScoreChange;
+        }
+
+        private void Start()
+        {
+            StartCoroutine(BackendHandler.GetScoresRoutine());
         }
 
         private void OnDestroy()

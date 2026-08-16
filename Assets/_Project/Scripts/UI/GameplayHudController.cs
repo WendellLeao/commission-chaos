@@ -1,4 +1,5 @@
 using System.Collections;
+using _Project.Scripts.Networking;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -103,6 +104,8 @@ namespace _Project
 
             _losePanelShown = true;
             _losePanel.style.display = DisplayStyle.Flex;
+            
+            StartCoroutine(BackendHandler.PostScore(_scoreManager.TotalScore));
         }
 
         private string BuildScoreText(int score)
