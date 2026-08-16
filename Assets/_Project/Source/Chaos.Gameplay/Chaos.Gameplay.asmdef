@@ -1,0 +1,19 @@
+{
+    "name": "Chaos.Gameplay",
+    "rootNamespace": "Chaos.Gameplay",
+    "references": [
+        "Chaos.Backend",
+        "FishNet.Runtime",
+        "Unity.InputSystem",
+        "Unity.Cinemachine"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
