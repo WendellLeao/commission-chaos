@@ -4848,9 +4848,7 @@ GameObject:
   - component: {fileID: 6994556122494143772}
   - component: {fileID: 2600567899207574070}
   - component: {fileID: 938809502355089911}
-  - component: {fileID: 4388404008855283199}
   - component: {fileID: 7320433252957306433}
-  - component: {fileID: 7959727946611886940}
   - component: {fileID: 6161853342963879094}
   - component: {fileID: 4603550073636542028}
   - component: {fileID: 7832010701672468531}
@@ -4925,9 +4923,9 @@ MonoBehaviour:
   <PredictedOwner>k__BackingField: {fileID: 0}
   NetworkBehaviours:
   - {fileID: 938809502355089911}
-  - {fileID: 4388404008855283199}
+  - {fileID: 0}
   - {fileID: 7320433252957306433}
-  - {fileID: 7959727946611886940}
+  - {fileID: 0}
   - {fileID: 6161853342963879094}
   - {fileID: 4603550073636542028}
   InitializedParentNetworkBehaviour: {fileID: 0}
@@ -5014,22 +5012,6 @@ MonoBehaviour:
     X: 0
     Y: 0
     Z: 0
---- !u!114 &4388404008855283199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2890698910832968897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b14c270b999497d8a27110b1d965e5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.MyPlayerIdProvider
-  _componentIndexCache: 1
-  _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 2600567899207574070}
-  characterIdDebug: 
 --- !u!114 &7320433252957306433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5050,29 +5032,6 @@ MonoBehaviour:
   rotationSpeed: 720
   gravity: -9.81
   jumpHeight: 3
---- !u!114 &7959727946611886940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2890698910832968897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3377711437f4e37b750f8e028176cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.MyPlayerColorChanger
-  _componentIndexCache: 3
-  _addedNetworkObject: {fileID: 2600567899207574070}
-  _networkObjectCache: {fileID: 2600567899207574070}
-  rend: {fileID: 6153571517217636955}
-  colorPalette:
-  - {r: 0.9, g: 0.15, b: 0.15, a: 1}
-  - {r: 0.15, g: 0.45, b: 0.9, a: 1}
-  - {r: 0.15, g: 0.8, b: 0.25, a: 1}
-  - {r: 0.95, g: 0.8, b: 0.1, a: 1}
-  - {r: 0.75, g: 0.2, b: 0.85, a: 1}
-  - {r: 0.1, g: 0.85, b: 0.85, a: 1}
 --- !u!114 &6161853342963879094
 MonoBehaviour:
   m_ObjectHideFlags: 0
