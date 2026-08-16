@@ -1,4 +1,3 @@
-using System.Collections;
 using _Project.Scripts.Networking;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -34,8 +33,8 @@ namespace _Project
             _scoreLabel.text = BuildScoreText(0);
             _timerLabel.text = BuildTimerText(GameTimer.MatchDuration);
 
-            StartCoroutine(WaitForScoreManager());
-            StartCoroutine(WaitForGameTimer());
+            StartCoroutine(SingletonWaiter.WaitFor(() => ScoreManager.Instance, OnScoreManagerReady));
+            StartCoroutine(SingletonWaiter.WaitFor(() => GameTimer.Instance, OnGameTimerReady));
         }
 
         private void OnDisable()
@@ -54,26 +53,16 @@ namespace _Project
             StopAllCoroutines();
         }
 
-        private IEnumerator WaitForScoreManager()
+        private void OnScoreManagerReady(ScoreManager scoreManager)
         {
-            while (ScoreManager.Instance == null)
-            {
-                yield return null;
-            }
-
-            _scoreManager = ScoreManager.Instance;
+            _scoreManager = scoreManager;
             _scoreManager.OnScoreChanged += OnScoreChanged;
             OnScoreChanged(_scoreManager.TotalScore);
         }
 
-        private IEnumerator WaitForGameTimer()
+        private void OnGameTimerReady(GameTimer gameTimer)
         {
-            while (GameTimer.Instance == null)
-            {
-                yield return null;
-            }
-
-            _gameTimer = GameTimer.Instance;
+            _gameTimer = gameTimer;
             _gameTimer.OnTimeChanged += OnTimeChanged;
             _gameTimer.OnTimeUp += OnTimeUp;
             OnTimeChanged(_gameTimer.RemainingTime);
@@ -83,11 +72,13 @@ namespace _Project
         {
             _scoreLabel.text = BuildScoreText(score);
 
-            if (!_winPanelShown && score >= ScoreManager.WinScore)
+            if (_winPanelShown || score < ScoreManager.WinScore)
             {
-                _winPanelShown = true;
-                _winPanel.style.display = DisplayStyle.Flex;
+                return;
             }
+
+            _winPanelShown = true;
+            _winPanel.style.display = DisplayStyle.Flex;
         }
 
         private void OnTimeChanged(float remainingTime)
@@ -97,23 +88,23 @@ namespace _Project
 
         private void OnTimeUp()
         {
-            if (_winPanelShown || _losePanelShown)
+            if (_losePanelShown || _winPanelShown)
             {
                 return;
             }
 
             _losePanelShown = true;
             _losePanel.style.display = DisplayStyle.Flex;
-            
+
             StartCoroutine(BackendHandler.PostScore(_scoreManager.TotalScore));
         }
 
-        private string BuildScoreText(int score)
+        private static string BuildScoreText(int score)
         {
             return $"Score: {score}";
         }
 
-        private string BuildTimerText(float remainingTime)
+        private static string BuildTimerText(float remainingTime)
         {
             return $"Time: {Mathf.CeilToInt(remainingTime)}";
         }
