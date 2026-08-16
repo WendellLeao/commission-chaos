@@ -12,21 +12,21 @@ namespace _Project
                 return;
             }
 
-            PlayerPickup player = other.GetComponentInParent<PlayerPickup>();
+            CharacterPickup character = other.GetComponentInParent<CharacterPickup>();
 
-            if (player == null)
+            if (character == null)
             {
                 return;
             }
 
-            PickupItem heldItem = player.GetComponentInChildren<PickupItem>();
+            PickupItem heldItem = character.GetComponentInChildren<PickupItem>();
 
             if (heldItem == null || !heldItem.IsHeld)
             {
                 return;
             }
 
-            player.ClearHeldItemServer();
+            character.ClearHeldItemServer();
             Despawn(heldItem.NetworkObject);
             ScoreManager.Instance.AddScore(ScoreManager.PointsPerItem);
         }

@@ -69,16 +69,16 @@ namespace _Project
             }
 
             _heldTimer = 0f;
-            PlayerPickup holder = pickupItem.Holder;
+            CharacterPickup holder = pickupItem.Holder;
             pickupItem.Drop();
             holder.ClearHeldItemServer();
         }
 
         private void TickFleeing()
         {
-            Transform nearestPlayer = FindNearestPlayerWithinRadius();
+            Transform nearestCharacter = FindNearestCharacterWithinRadius();
 
-            if (nearestPlayer == null)
+            if (nearestCharacter == null)
             {
                 return;
             }
@@ -91,12 +91,12 @@ namespace _Project
             }
 
             _hopCooldown = hopInterval;
-            Hop(nearestPlayer.position);
+            Hop(nearestCharacter.position);
         }
 
-        private void Hop(Vector3 playerPosition)
+        private void Hop(Vector3 characterPosition)
         {
-            Vector3 awayDirection = transform.position - playerPosition;
+            Vector3 awayDirection = transform.position - characterPosition;
             awayDirection.y = 0f;
 
             if (awayDirection.sqrMagnitude < 0.0001f)
@@ -114,7 +114,7 @@ namespace _Project
             rb.linearVelocity = velocity;
         }
 
-        private Transform FindNearestPlayerWithinRadius()
+        private Transform FindNearestCharacterWithinRadius()
         {
             Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
 
@@ -123,19 +123,19 @@ namespace _Project
 
             foreach (Collider hit in hits)
             {
-                PlayerPickup player = hit.GetComponentInParent<PlayerPickup>();
+                CharacterPickup character = hit.GetComponentInParent<CharacterPickup>();
 
-                if (player == null)
+                if (character == null)
                 {
                     continue;
                 }
 
-                float distanceSqr = (player.transform.position - transform.position).sqrMagnitude;
+                float distanceSqr = (character.transform.position - transform.position).sqrMagnitude;
 
                 if (distanceSqr < nearestDistanceSqr)
                 {
                     nearestDistanceSqr = distanceSqr;
-                    nearest = player.transform;
+                    nearest = character.transform;
                 }
             }
 

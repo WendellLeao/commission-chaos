@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 4603550073636542028}
   - component: {fileID: 7832010701672468531}
   m_Layer: 0
-  m_Name: MyPlayer
+  m_Name: MyCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4961,7 +4961,7 @@ MonoBehaviour:
   _teleportThreshold: 1
   <PrefabId>k__BackingField: 8
   <SpawnableCollectionId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 9895087958597524300
+  <AssetPathHash>k__BackingField: 15573065684909433874
   SceneId: 0
   SerializedTransformProperties:
     Position: {x: 0, y: 0, z: 0}
@@ -5029,7 +5029,7 @@ MonoBehaviour:
   _componentIndexCache: 1
   _addedNetworkObject: {fileID: 2600567899207574070}
   _networkObjectCache: {fileID: 2600567899207574070}
-  playerIdDebug: 
+  characterIdDebug: 
 --- !u!114 &7320433252957306433
 MonoBehaviour:
   m_ObjectHideFlags: 0

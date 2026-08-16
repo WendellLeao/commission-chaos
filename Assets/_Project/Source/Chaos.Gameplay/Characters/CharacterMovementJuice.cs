@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Project
 {
-    internal sealed class PlayerMovementJuice : MonoBehaviour
+    internal sealed class CharacterMovementJuice : MonoBehaviour
     {
         [SerializeField] private Transform bodyTransform;
         [SerializeField] private Transform visorTransform;

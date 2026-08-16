@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Project
 {
-    internal sealed class MyPlayerColorChanger : NetworkBehaviour
+    internal sealed class MyCharacterColorChanger : NetworkBehaviour
     {
         [SerializeField] private Renderer rend;
         [SerializeField] private Color[] colorPalette;

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace _Project
 {
-    internal sealed class PlayerPickup : NetworkBehaviour
+    internal sealed class CharacterPickup : NetworkBehaviour
     {
         [SerializeField] private Transform handSocket;
         [SerializeField] private float pickupRadius = 1.5f;

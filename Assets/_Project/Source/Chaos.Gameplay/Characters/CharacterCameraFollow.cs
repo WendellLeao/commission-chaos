@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Project
 {
-    public class PlayerCameraFollow : NetworkBehaviour
+    public class CharacterCameraFollow : NetworkBehaviour
     {
         public override void OnStartClient()
         {
@@ -17,8 +17,8 @@ namespace _Project
                 return;
             }
 
-            CinemachineCamera playerCamera = FindFirstObjectByType<CinemachineCamera>();
-            playerCamera.Follow = transform;
+            CinemachineCamera characterCamera = FindFirstObjectByType<CinemachineCamera>();
+            characterCamera.Follow = transform;
         }
     }
 }
