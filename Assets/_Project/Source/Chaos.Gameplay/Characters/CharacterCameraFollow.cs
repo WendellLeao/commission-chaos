@@ -2,7 +2,7 @@ using FishNet.Object;
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.Characters
 {
     public class CharacterCameraFollow : NetworkBehaviour
     {

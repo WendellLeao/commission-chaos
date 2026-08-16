@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Networking
+﻿namespace Chaos.Backend.Highscores
 {
     [System.Serializable]
     internal struct ScoreData

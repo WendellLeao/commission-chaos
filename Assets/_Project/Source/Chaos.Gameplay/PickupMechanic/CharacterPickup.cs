@@ -1,9 +1,10 @@
+using Chaos.Gameplay.Items;
 using FishNet.Connection;
 using FishNet.Object;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Project
+namespace Chaos.Gameplay.PickupMechanic
 {
     internal sealed class CharacterPickup : NetworkBehaviour
     {

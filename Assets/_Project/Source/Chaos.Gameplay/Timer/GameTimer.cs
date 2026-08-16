@@ -4,7 +4,7 @@ using FishNet.Object.Synchronizing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Project
+namespace Chaos.Gameplay.Timer
 {
     internal sealed class GameTimer : NetworkBehaviour
     {

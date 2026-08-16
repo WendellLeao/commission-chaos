@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace _Project.Scripts.Networking
+namespace Chaos.Backend.Highscores
 {
     internal static class BackendHandler
     {

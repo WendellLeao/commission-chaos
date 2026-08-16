@@ -1,8 +1,9 @@
+using Chaos.Gameplay.PickupMechanic;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.Items
 {
     internal sealed class PickupItem : NetworkBehaviour
     {

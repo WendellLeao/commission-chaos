@@ -1,7 +1,8 @@
+using Chaos.Gameplay.PickupMechanic;
 using FishNet.Object;
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.Items
 {
     internal sealed class ChaoticFleeingItem : NetworkBehaviour
     {

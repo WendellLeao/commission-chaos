@@ -2,7 +2,7 @@ using FishNet.Object;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Project
+namespace Chaos.Gameplay.Characters
 {
     internal sealed class CharacterMotor : NetworkBehaviour
     {

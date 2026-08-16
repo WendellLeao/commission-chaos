@@ -1,9 +1,9 @@
 using System;
-using _Project.Scripts.Networking;
+using Chaos.Backend.Highscores;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
 
-namespace _Project
+namespace Chaos.Gameplay.Score
 {
     internal sealed class ScoreManager : NetworkBehaviour
     {

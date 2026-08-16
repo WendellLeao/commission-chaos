@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using FishNet.Object;
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.Items
 {
     internal sealed class PickupSpawner : NetworkBehaviour
     {

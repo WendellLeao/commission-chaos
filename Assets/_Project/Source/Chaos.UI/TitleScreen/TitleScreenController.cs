@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace _Project
+namespace Chaos.UI.TitleScreen
 {
     internal sealed class TitleScreenController : MonoBehaviour
     {

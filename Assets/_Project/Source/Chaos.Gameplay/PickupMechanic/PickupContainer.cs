@@ -1,7 +1,9 @@
+using Chaos.Gameplay.Items;
+using Chaos.Gameplay.Score;
 using FishNet.Object;
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.PickupMechanic
 {
     internal sealed class PickupContainer : NetworkBehaviour
     {

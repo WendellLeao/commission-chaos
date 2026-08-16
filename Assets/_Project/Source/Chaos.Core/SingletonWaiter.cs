@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace _Project
+namespace Chaos.Core
 {
     internal static class SingletonWaiter
     {

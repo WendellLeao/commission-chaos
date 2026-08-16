@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project
+namespace Chaos.Gameplay.Characters
 {
     internal sealed class CharacterMovementJuice : MonoBehaviour
     {

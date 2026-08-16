@@ -1,8 +1,11 @@
-using _Project.Scripts.Networking;
+using Chaos.Backend.Highscores;
+using Chaos.Core;
+using Chaos.Gameplay.Score;
+using Chaos.Gameplay.Timer;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace _Project
+namespace Chaos.UI.Hud
 {
     internal sealed class GameplayHudController : MonoBehaviour
     {
