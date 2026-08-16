@@ -176,7 +176,7 @@ MonoBehaviour:
   _initializeOrder: 0
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
-  _initializedTimestamp: -8584174930969702845
+  _initializedTimestamp: -8584174926199359163
   _localLevelOfDetailCalculationType: 0
   _useLevelOfDetail: 0
   _useRootLevelOfDetail: 1
@@ -284,8 +284,9 @@ MonoBehaviour:
   _networkObjectCache: {fileID: 1906793788998079376}
   pickupItem: {fileID: 4488355543935629724}
   rb: {fileID: 5040789543466637265}
-  detectionRadius: 4
-  hopForce: 3
-  hopInterval: 0.3
+  detectionRadius: 10
+  hopForce: 4
+  hopInterval: 0.4
   zigzagAngle: 40
   autoDropDelay: 6
+  extraGravityMultiplier: 1.5
