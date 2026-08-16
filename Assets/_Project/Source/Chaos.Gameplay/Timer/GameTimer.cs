@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace Chaos.Gameplay.Timer
 {
-    internal sealed class GameTimer : NetworkBehaviour
+    public sealed class GameTimer : NetworkBehaviour
     {
         public event Action<float> OnTimeChanged;
         public event Action OnTimeUp;

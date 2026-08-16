@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Chaos.Core
 {
-    internal static class SingletonWaiter
+    public static class SingletonWaiter
     {
         public static IEnumerator WaitFor<T>(Func<T> getInstance, Action<T> onReady) where T : class
         {

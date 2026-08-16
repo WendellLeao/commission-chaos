@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 namespace Chaos.Backend.Highscores
 {
-    internal static class BackendHandler
+    public static class BackendHandler
     {
         private static string apiUrl = "http://localhost:3000/highscores";
         

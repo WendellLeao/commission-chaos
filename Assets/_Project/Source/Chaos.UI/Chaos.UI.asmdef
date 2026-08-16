@@ -4,7 +4,8 @@
     "references": [
         "Chaos.Core",
         "Chaos.Gameplay",
-        "Chaos.Backend"
+        "Chaos.Backend",
+        "FishNet.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

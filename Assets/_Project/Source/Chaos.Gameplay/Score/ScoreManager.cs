@@ -5,7 +5,7 @@ using FishNet.Object.Synchronizing;
 
 namespace Chaos.Gameplay.Score
 {
-    internal sealed class ScoreManager : NetworkBehaviour
+    public sealed class ScoreManager : NetworkBehaviour
     {
         public event Action<int> OnScoreChanged;
 
