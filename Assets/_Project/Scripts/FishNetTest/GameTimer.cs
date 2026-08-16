@@ -2,6 +2,7 @@ using System;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace _Project
 {
@@ -10,7 +11,7 @@ namespace _Project
         public event Action<float> OnTimeChanged;
         public event Action OnTimeUp;
 
-        public const float MatchDuration = 30f;
+        public const float MatchDuration = 120f;
 
         private readonly SyncVar<float> _remainingTime = new(MatchDuration);
 
@@ -50,7 +51,7 @@ namespace _Project
         {
             OnTimeChanged?.Invoke(next);
 
-            if (!_timeUpInvoked && next <= 0f)
+            if (Keyboard.current.backspaceKey.wasPressedThisFrame || !_timeUpInvoked && next <= 0f)
             {
                 _timeUpInvoked = true;
                 OnTimeUp?.Invoke();

@@ -9,8 +9,8 @@ namespace _Project
     {
         public event Action<int> OnScoreChanged;
 
-        public const int WinScore = 500;
-        public const int PointsPerItem = 100;
+        public const int WinScore = 9999;
+        public const int PointsPerItem = 10;
 
         private readonly SyncVar<int> _totalScore = new();
 
