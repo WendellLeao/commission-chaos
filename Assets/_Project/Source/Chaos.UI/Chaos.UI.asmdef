@@ -5,6 +5,8 @@
         "Chaos.Core",
         "Chaos.Gameplay",
         "Chaos.Backend",
+        "WendellLeao.ServiceLocator",
+        "WendellLeao.Events",
         "FishNet.Runtime"
     ],
     "includePlatforms": [],

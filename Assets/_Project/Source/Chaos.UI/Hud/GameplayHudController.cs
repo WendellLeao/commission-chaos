@@ -4,6 +4,8 @@ using Chaos.Gameplay.Score;
 using Chaos.Gameplay.Timer;
 using UnityEngine;
 using UnityEngine.UIElements;
+using WendellLeao.Events;
+using WendellLeao.ServiceLocator;
 
 namespace Chaos.UI.Hud
 {
@@ -19,6 +21,12 @@ namespace Chaos.UI.Hud
         private GameTimer _gameTimer;
         private bool _winPanelShown;
         private bool _losePanelShown;
+        private IEventService _eventService;
+
+        private void Awake()
+        {
+            _eventService = Locator.Get<IEventService>();
+        }
 
         private void OnEnable()
         {
@@ -50,7 +58,7 @@ namespace Chaos.UI.Hud
             if (_gameTimer != null)
             {
                 _gameTimer.OnTimeChanged -= OnTimeChanged;
-                _gameTimer.OnTimeUp -= OnTimeUp;
+                _eventService.RemoveEventListener<OnTimeUpEvent>(OnTimeUp);
             }
 
             StopAllCoroutines();
@@ -67,7 +75,7 @@ namespace Chaos.UI.Hud
         {
             _gameTimer = gameTimer;
             _gameTimer.OnTimeChanged += OnTimeChanged;
-            _gameTimer.OnTimeUp += OnTimeUp;
+            _eventService.AddEventListener<OnTimeUpEvent>(OnTimeUp);
             OnTimeChanged(_gameTimer.RemainingTime);
         }
 
@@ -89,7 +97,7 @@ namespace Chaos.UI.Hud
             _timerLabel.text = BuildTimerText(remainingTime);
         }
 
-        private void OnTimeUp()
+        private void OnTimeUp(OnTimeUpEvent _)
         {
             if (_losePanelShown || _winPanelShown)
             {

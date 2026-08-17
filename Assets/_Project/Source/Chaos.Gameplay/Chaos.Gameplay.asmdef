@@ -3,6 +3,8 @@
     "rootNamespace": "Chaos.Gameplay",
     "references": [
         "Chaos.Backend",
+        "WendellLeao.ServiceLocator",
+        "WendellLeao.Events",
         "FishNet.Runtime",
         "Unity.InputSystem",
         "Unity.Cinemachine"

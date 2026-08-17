@@ -3,19 +3,21 @@ using FishNet.Object;
 using FishNet.Object.Synchronizing;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WendellLeao.Events;
+using WendellLeao.ServiceLocator;
 
 namespace Chaos.Gameplay.Timer
 {
     public sealed class GameTimer : NetworkBehaviour
     {
         public event Action<float> OnTimeChanged;
-        public event Action OnTimeUp;
 
         public const float MatchDuration = 120f;
 
         private readonly SyncVar<float> _remainingTime = new(MatchDuration);
 
         private bool _timeUpInvoked;
+        private IEventService _eventService;
 
         public static GameTimer Instance { get; private set; }
 
@@ -24,6 +26,7 @@ namespace Chaos.Gameplay.Timer
         private void Awake()
         {
             Instance = this;
+            _eventService = Locator.Get<IEventService>();
             _remainingTime.OnChange += OnRemainingTimeChange;
         }
 
@@ -54,7 +57,7 @@ namespace Chaos.Gameplay.Timer
             if (Keyboard.current.backspaceKey.wasPressedThisFrame || !_timeUpInvoked && next <= 0f)
             {
                 _timeUpInvoked = true;
-                OnTimeUp?.Invoke();
+                _eventService.DispatchEvent(new OnTimeUpEvent());
             }
         }
     }
