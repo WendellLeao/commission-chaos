@@ -359,6 +359,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.wendellleao.scenebootstrap": {
+      "version": "https://github.com/WendellLeao/scene-bootstrap.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b27e0b0ce0af8250f37dfdbf04ccdf315c205904"
+    },
     "com.wendellleao.scenesearchwindow": {
       "version": "https://github.com/WendellLeao/scene-search-window.git",
       "depth": 0,
