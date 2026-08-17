@@ -359,6 +359,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.wendellleao.scenesearchwindow": {
+      "version": "https://github.com/WendellLeao/scene-search-window.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7e9fc4945605d6ecc0c3484a9b73704a0b03a77e"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
