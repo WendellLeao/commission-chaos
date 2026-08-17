@@ -359,6 +359,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.wendellleao.eventservice": {
+      "version": "https://github.com/WendellLeao/event-service.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.wendellleao.servicelocator": "https://github.com/WendellLeao/service-locator.git"
+      },
+      "hash": "91b4d158cb1a09e68a26c7fdff86285c20cc513f"
+    },
     "com.wendellleao.scenebootstrap": {
       "version": "https://github.com/WendellLeao/scene-bootstrap.git",
       "depth": 0,
@@ -372,6 +381,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "7e9fc4945605d6ecc0c3484a9b73704a0b03a77e"
+    },
+    "com.wendellleao.servicelocator": {
+      "version": "https://github.com/WendellLeao/service-locator.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "36de7a975166e603e24fd56c76f35ba7e876c37c"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
